@@ -1,9 +1,9 @@
 // ARRAYS
 
 let planes = [
-    {nombre: "Bronce", precioBase: 25000},
-    {nombre: "Plata", precioBase: 30000},
-    {nombre: "Oro", precioBase: 50000}
+    { nombre: "Bronce", precioBase: 25000 },
+    { nombre: "Plata", precioBase: 30000 },
+    { nombre: "Oro", precioBase: 50000 }
 ];
 
 let carrito = [];
@@ -11,7 +11,7 @@ let carrito = [];
 // FUNCIONES
 
 function menu() {
-    return parseInt(prompt("Selecciona una opción:\n1. Comprar Plan Bronce\n2. Comprar Plan Plata\n3. Comprar Plan Oro\n4. Ver Carrito\n0. Salir"));
+    return parseInt(prompt("Selecciona una opción:\n1. Comprar Plan Bronce\n2. Comprar Plan Plata\n3. Comprar Plan Oro\n4. Ver Carrito\n5. Ver plan más caro\n6. Ver plan más barato\n0. Salir"));
 }
 
 function seleccionarMeses(plan) {
@@ -28,10 +28,10 @@ function seleccionarMeses(plan) {
         }
 
         // Confirmar el plan
-        let confirmacion = parseInt(prompt("Has seleccionado el Plan " + plan.nombre + " por " + meses +  " mes(es). El total a pagar es de " + precioFinal + descuento + ".\n1. Confirmar y agregar al carrito\n2. Cancelar\n3. Volver al menú"));
+        let confirmacion = parseInt(prompt("Has seleccionado el Plan " + plan.nombre + " por " + meses + " mes(es). El total a pagar es de " + precioFinal + descuento + ".\n1. Confirmar y agregar al carrito\n2. Cancelar\n3. Volver al menú"));
         while (confirmacion !== 1 && confirmacion !== 2 && confirmacion !== 3) {
             alert("Opción inválida. Por favor, elige 1, 2 o 3.");
-            confirmacion = parseInt(prompt("Has seleccionado el Plan " + plan.nombre + " por " + meses +  " mes(es). El total a pagar es de " + precioFinal + descuento + ".\n1. Confirmar y agregar al carrito\n2. Cancelar\n3. Volver al menú"));
+            confirmacion = parseInt(prompt("Has seleccionado el Plan " + plan.nombre + " por " + meses + " mes(es). El total a pagar es de " + precioFinal + descuento + ".\n1. Confirmar y agregar al carrito\n2. Cancelar\n3. Volver al menú"));
         }
 
         if (confirmacion === 1) {
@@ -64,10 +64,22 @@ function mostrarCarrito() {
     } else {
         let contenido = "Contenido del carrito:\n";
         carrito.forEach(el => {
-            contenido += "Plan: " + el.plan + ", Meses: " + el.meses  + ", Precio: " + el.precio + "\n";
+            contenido += "Plan: " + el.plan + ", Meses: " + el.meses + ", Precio: " + el.precio + "\n";
         });
         alert(contenido);
     }
+}
+
+// Función para mostrar el plan más barato
+function mostrarPlanMasBarato() {
+    let planMasBarato = planes.find(plan => plan.precioBase === Math.min(...planes.map(p => p.precioBase)));
+    alert("El plan más barato es: " + planMasBarato.nombre + " con un precio de: " + planMasBarato.precioBase + "$");
+}
+
+// Función para mostrar el plan más caro
+function mostrarPlanMasCaro() {
+    let planMasCaro = planes.find(plan => plan.precioBase === Math.max(...planes.map(p => p.precioBase)));
+    alert("El plan más caro es: " + planMasCaro.nombre + " con un precio de: " + planMasCaro.precioBase + "$");
 }
 
 // INICIO DEL PROGRAMA
@@ -89,6 +101,14 @@ while (opcion !== 0) {
 
         case 4: // Ver Carrito
             mostrarCarrito();
+            break;
+
+        case 5: // Mostrar plan mas caro
+            mostrarPlanMasCaro();
+            break;
+
+        case 6: // Mostrar plan mas barato
+            mostrarPlanMasBarato();
             break;
 
         default:
