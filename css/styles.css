@@ -1,0 +1,121 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+/* color de fondo: #302b27, azul oscuro: #1b264f, azul marino: #274690, azul/gris: #576ca8, blanco: #f5f3f5 */
+
+/* INICIO */
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-color: #302b27;
+    color: #f5f3f5;
+}
+
+/* HEADER */
+header {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN*/
+section {
+    display: flex;
+    justify-content: space-around;
+}
+
+section .planes {
+    height: 650px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: 3px solid #1b264f;
+    border-radius: 10px;
+    background-color: #576ca8;
+}
+
+section .planes h2 {
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+section .planes .planes-beneficios {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}
+
+section .planes .planes-beneficios li {
+    padding: 10px;
+}
+
+section .planes p {
+    margin: 10px;
+}
+
+section .planes .planes-meses {
+    margin: 10px;
+}
+
+section .planes .planes-meses li button{
+    margin: 10px;
+    padding: 10px;
+    width: 220px;
+    background-color: #274690;
+    color: #f5f3f5;
+    border: 2px solid #1b264f;
+    border-radius: 5px;
+}
+
+.contenedor-carrito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 150px - 650px);
+}
+
+.contenedor-carrito button {
+    padding: 10px;
+    width: max-content;
+    background-color: #576ca8;
+    border: 2px solid #1b264f;
+    border-radius: 5px;
+    color: #f5f3f5;
+}
+
+.contenedor-carrito-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrito-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid #1b264f;
+    border-radius: 10px;
+    background-color: #576ca8;
+    width: 400px;
+    
+}
