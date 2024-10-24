@@ -155,13 +155,11 @@ function verCarrito() {
     
     if (!carritoContenido) {
 
-
         const seccionCarrito = document.createElement("section");
 
         seccionCarrito.className = "contenedor-carrito-contenido";
 
         carritoContenido = document.createElement("div");
-
 
         carritoContenido.className = "carrito-contenido";
 
@@ -174,11 +172,9 @@ function verCarrito() {
 
     let total = 0;
 
-
     const ul = document.createElement("ul");
 
     listaCarrito.forEach((item) => {
-
 
         const li = document.createElement("li");
 
@@ -198,6 +194,7 @@ function verCarrito() {
     carritoContenido.appendChild(totalElement);
 
     // Botones para finalizar y vaciar carrito
+
     crearBotonCarrito("Finalizar Compra", finalizarCompra, carritoContenido);
 
     crearBotonCarrito("Vaciar Carrito", vaciarCarrito, carritoContenido);
@@ -213,7 +210,6 @@ function crearBotonCarrito(texto, funcion, contenedor) {
 
     contenedor.appendChild(button);
 }
-
 
 /*
 
@@ -236,7 +232,6 @@ function procesarCompra() {
 }
 
 function finalizarCompra() {
-
 
     if (listaCarrito.length > 0) {
 
@@ -279,21 +274,15 @@ function finalizarCompra() {
 
 function vaciarCarrito() {
 
-
     listaCarrito = [];
-
 
     contador = 0;
 
-
     botonCarrito.innerText = `Carrito (${contador})`;
-
 
     const carritoContenido = document.querySelector(".carrito-contenido");
 
-
     if (carritoContenido) {
-
 
         carritoContenido.innerHTML = "<h3>Carrito de Compras</h3>";
 
@@ -318,32 +307,25 @@ function vaciarCarrito() {
 
 function guardarCarritoEnLocalStorage() {
 
-
     localStorage.setItem('carrito', JSON.stringify(listaCarrito));
-
 
     localStorage.setItem('contador', contador);
 }
 
 function cargarCarritoDesdeLocalStorage() {
 
-
     const carritoGuardado = localStorage.getItem('carrito');
-
 
     const contadorGuardado = localStorage.getItem('contador');
 
     if (carritoGuardado) {
-
 
         listaCarrito = JSON.parse(carritoGuardado);
     }
 
     if (contadorGuardado) {
 
-
         contador = parseInt(contadorGuardado);
-
 
         botonCarrito.innerText = `Carrito (${contador})`;
     }
