@@ -1,0 +1,47 @@
+[
+    {
+        "nombre": "Plan bronce I",
+        "precio": "30000",
+        "mes": 1
+    },
+    {
+        "nombre": "Plan bronce II",
+        "precio": "30000",
+        "mes": 2
+    },
+    {
+        "nombre": "Plan bronce III",
+        "precio": "30000",
+        "mes": 3
+    },
+    {
+        "nombre": "Plan plata I",
+        "precio": "45000",
+        "mes": 1
+    },
+    {
+        "nombre": "Plan plata II",
+        "precio": "45000",
+        "mes": 2
+    },
+    {
+        "nombre": "Plan plata III",
+        "precio": "45000",
+        "mes": 3
+    },
+    {
+        "nombre": "Plan oro I",
+        "precio": "50000",
+        "mes": 1
+    },
+    {
+        "nombre": "Plan oro II",
+        "precio": "50000",
+        "mes": 2
+    },
+    {
+        "nombre": "Plan oro III",
+        "precio": "50000",
+        "mes": 3
+    }
+]
